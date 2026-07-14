@@ -1,0 +1,6 @@
+Backbone,Fine-tuning scope,Best learning rate,Parameters (M),Best validation macro-F1
+ResNet50,layer3+layer4+fc,0.0001,23.516,0.975004
+DenseNet121,all parameters,0.0003,6.958,0.977831
+EfficientNet-B0,all parameters,0.0003,4.013,0.990262
+EfficientNet-B3,all parameters,0.0001,10.702,0.984731
+ConvNeXt-Tiny,all parameters,0.0001,27.823,0.988885

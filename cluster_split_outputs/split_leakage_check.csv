@@ -1,0 +1,4 @@
+comparison,exact_overlap_pairs,pixel_overlap_pairs,near_duplicate_overlap_pairs,total_confirmed_overlaps
+train_vs_val,0,0,0,0
+train_vs_test,0,0,0,0
+val_vs_test,0,0,0,0

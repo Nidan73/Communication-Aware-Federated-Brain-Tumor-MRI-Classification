@@ -1,0 +1,16 @@
+final_split,class_name,count
+train,glioma,1260
+train,meningioma,1260
+train,notumor,1260
+train,pituitary,1260
+train,TOTAL,5040
+val,glioma,180
+val,meningioma,180
+val,notumor,180
+val,pituitary,180
+val,TOTAL,720
+test,glioma,360
+test,meningioma,360
+test,notumor,360
+test,pituitary,360
+test,TOTAL,1440

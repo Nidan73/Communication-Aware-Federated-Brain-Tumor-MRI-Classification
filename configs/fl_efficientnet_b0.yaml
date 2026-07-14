@@ -1,0 +1,66 @@
+output_dir: federated_results
+
+manifests:
+  train: cluster_split_outputs/train_manifest.csv
+  val: cluster_split_outputs/val_manifest.csv
+  test: cluster_split_outputs/test_manifest.csv
+
+classes:
+  - glioma
+  - meningioma
+  - notumor
+  - pituitary
+
+training:
+  seed: 42
+  image_size: 224
+  batch_size: 32
+  num_workers: 2
+  optimizer: AdamW
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  selection_metric: validation_macro_f1
+
+federated:
+  clients: 4
+  rounds: 10
+  local_epochs: 3
+  aggregation: weighted_fedavg_by_client_sample_count
+
+split:
+  iid: class_balanced_across_clients
+  noniid: one_dominant_class_per_client_70_30_label_skew
+  noniid_dominant_fraction: 0.70
+
+fedprox:
+  mu: 0.01
+
+communication:
+  mode: full_state_dict_upload_plus_download_per_round
+  unit: MB
+
+experiments:
+  - run_id: fedavg_efficientnet_b0_iid
+    algorithm: fedavg
+    model_name: efficientnet_b0
+    pretrained: imagenet
+    trainable_layers: all
+    partition: iid
+    learning_rate: 0.0003
+
+  - run_id: fedavg_efficientnet_b0_noniid
+    algorithm: fedavg
+    model_name: efficientnet_b0
+    pretrained: imagenet
+    trainable_layers: all
+    partition: noniid
+    learning_rate: 0.0003
+
+  - run_id: fedprox_efficientnet_b0_noniid
+    algorithm: fedprox
+    model_name: efficientnet_b0
+    pretrained: imagenet
+    trainable_layers: all
+    partition: noniid
+    learning_rate: 0.0003
+    prox_mu: 0.01

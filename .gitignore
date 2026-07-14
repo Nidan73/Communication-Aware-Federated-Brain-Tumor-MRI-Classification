@@ -1,0 +1,49 @@
+# Environments and Python cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Local agent/editor metadata
+.agents/
+.codex/
+.git/
+.DS_Store
+
+# Datasets and local data copies
+Dataset/
+datasets/
+clean_manifest_outputs/
+
+# Large generated experiment outputs and checkpoints
+centralized_benchmark_results/
+federated_results/
+federated_results_20rounds/
+reproducibility/results/
+logs/
+
+# Local caches and notebook checkpoints
+.ipynb_checkpoints/
+
+# Temporary rendered/review images and extracted text
+paper_anonymous_submission/rendered_page-*.png
+paper_anonymous_submission/review_page-*.png
+paper_anonymous_submission/review2_page-*.png
+paper_anonymous_submission/review3_page-*.png
+paper_anonymous_submission/final_pdf_text.txt
+
+# LaTeX build intermediates
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Optional local build PDFs outside curated figures/manuscripts
+# Keep manuscript PDFs that are part of the repo structure.

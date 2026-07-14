@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "comparison": "EfficientNet-B0 minus ResNet50",
+  "test_set_samples": 1440,
+  "mcnemar": {
+    "method": "exact two-sided binomial test on discordant pairs",
+    "raw_p_values_reported": true,
+    "multiple_testing_adjustment": "Holm across three seed-specific tests",
+    "fisher_method_used": false,
+    "overall_victory_claimed": false
+  },
+  "bootstrap": {
+    "method": "paired image-index resampling with 95% percentile interval",
+    "stratified_by_true_class": true,
+    "production_observations_per_class_per_resample": 360,
+    "base_seed": 104729,
+    "resamples_per_experiment_seed": 10000
+  },
+  "per_seed": [
+    {
+      "scope": "seed",
+      "seed": 42,
+      "test_samples": 1440,
+      "true_class_counts": {
+        "glioma": 360,
+        "meningioma": 360,
+        "notumor": 360,
+        "pituitary": 360
+      },
+      "both_models_correct": 1385,
+      "both_models_wrong": 19,
+      "only_efficientnet_correct": 21,
+      "only_resnet_correct": 15,
+      "discordant_total": 36,
+      "mcnemar_exact_two_sided_p": 0.4050322461407632,
+      "efficientnet_accuracy": 0.9763888888888889,
+      "resnet_accuracy": 0.9722222222222222,
+      "accuracy_difference_efficientnet_minus_resnet": 0.004166666666666652,
+      "efficientnet_macro_f1": 0.9763916630636561,
+      "resnet_macro_f1": 0.9722695864510998,
+      "macro_f1_difference_efficientnet_minus_resnet": 0.004122076612556258,
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 104771,
+      "bootstrap_stratified": true,
+      "accuracy_difference_ci_lower": -0.004166666666666652,
+      "accuracy_difference_ci_upper": 0.012499999999999956,
+      "macro_f1_difference_ci_lower": -0.004034958915431232,
+      "macro_f1_difference_ci_upper": 0.01231027931966485,
+      "mcnemar_interpretation": "not statistically distinguishable on the fixed test set",
+      "accuracy_ci_interpretation": "confidence interval includes zero",
+      "macro_f1_ci_interpretation": "confidence interval includes zero",
+      "mcnemar_holm_adjusted_p": 1.0,
+      "mcnemar_holm_interpretation": "not statistically distinguishable after Holm adjustment on the fixed test set"
+    },
+    {
+      "scope": "seed",
+      "seed": 123,
+      "test_samples": 1440,
+      "true_class_counts": {
+        "glioma": 360,
+        "meningioma": 360,
+        "notumor": 360,
+        "pituitary": 360
+      },
+      "both_models_correct": 1372,
+      "both_models_wrong": 25,
+      "only_efficientnet_correct": 20,
+      "only_resnet_correct": 23,
+      "discordant_total": 43,
+      "mcnemar_exact_two_sided_p": 0.7607916425613439,
+      "efficientnet_accuracy": 0.9666666666666667,
+      "resnet_accuracy": 0.96875,
+      "accuracy_difference_efficientnet_minus_resnet": -0.002083333333333326,
+      "efficientnet_macro_f1": 0.9666966621585964,
+      "resnet_macro_f1": 0.9688231271366152,
+      "macro_f1_difference_efficientnet_minus_resnet": -0.002126464978018827,
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 104852,
+      "bootstrap_stratified": true,
+      "accuracy_difference_ci_lower": -0.011111111111111072,
+      "accuracy_difference_ci_upper": 0.00694444444444442,
+      "macro_f1_difference_ci_lower": -0.011115616154785618,
+      "macro_f1_difference_ci_upper": 0.006886825877849138,
+      "mcnemar_interpretation": "not statistically distinguishable on the fixed test set",
+      "accuracy_ci_interpretation": "confidence interval includes zero",
+      "macro_f1_ci_interpretation": "confidence interval includes zero",
+      "mcnemar_holm_adjusted_p": 1.0,
+      "mcnemar_holm_interpretation": "not statistically distinguishable after Holm adjustment on the fixed test set"
+    },
+    {
+      "scope": "seed",
+      "seed": 2025,
+      "test_samples": 1440,
+      "true_class_counts": {
+        "glioma": 360,
+        "meningioma": 360,
+        "notumor": 360,
+        "pituitary": 360
+      },
+      "both_models_correct": 1391,
+      "both_models_wrong": 25,
+      "only_efficientnet_correct": 12,
+      "only_resnet_correct": 12,
+      "discordant_total": 24,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "efficientnet_accuracy": 0.9743055555555555,
+      "resnet_accuracy": 0.9743055555555555,
+      "accuracy_difference_efficientnet_minus_resnet": 0.0,
+      "efficientnet_macro_f1": 0.9743315295467063,
+      "resnet_macro_f1": 0.9743565184186279,
+      "macro_f1_difference_efficientnet_minus_resnet": -2.4988871921594047e-05,
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 106754,
+      "bootstrap_stratified": true,
+      "accuracy_difference_ci_lower": -0.00694444444444442,
+      "accuracy_difference_ci_upper": 0.00694444444444442,
+      "macro_f1_difference_ci_lower": -0.006913525977287155,
+      "macro_f1_difference_ci_upper": 0.006813040438024681,
+      "mcnemar_interpretation": "not statistically distinguishable on the fixed test set",
+      "accuracy_ci_interpretation": "confidence interval includes zero",
+      "macro_f1_ci_interpretation": "confidence interval includes zero",
+      "mcnemar_holm_adjusted_p": 1.0,
+      "mcnemar_holm_interpretation": "not statistically distinguishable after Holm adjustment on the fixed test set"
+    }
+  ],
+  "across_seeds": {
+    "scope": "across_seeds",
+    "seeds": [
+      42,
+      123,
+      2025
+    ],
+    "accuracy_differences": [
+      0.004166666666666652,
+      -0.002083333333333326,
+      0.0
+    ],
+    "mean_accuracy_difference": 0.000694444444444442,
+    "sample_sd_accuracy_difference": 0.003182344232608211,
+    "macro_f1_differences": [
+      0.004122076612556258,
+      -0.002126464978018827,
+      -2.4988871921594047e-05
+    ],
+    "mean_macro_f1_difference": 0.0006568742542052789,
+    "sample_sd_macro_f1_difference": 0.0031795866074641353,
+    "bootstrap_stratified": true,
+    "mcnemar_raw_p_values": {
+      "42": 0.4050322461407632,
+      "123": 0.7607916425613439,
+      "2025": 1.0
+    },
+    "mcnemar_holm_adjusted_p_values": {
+      "42": 1.0,
+      "123": 1.0,
+      "2025": 1.0
+    },
+    "mcnemar_multiple_testing_method": "Holm",
+    "fisher_method_used": false,
+    "interpretation": "Only three paired seed observations and three repeated fixed-test-set McNemar tests are available. Report raw and Holm-adjusted p-values, effect direction, and variability; do not claim an overall statistical victory. Fisher's method is not used."
+  }
+}

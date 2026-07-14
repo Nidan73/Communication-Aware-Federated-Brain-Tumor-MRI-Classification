@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "seeds": [
+    42,
+    123,
+    2025
+  ],
+  "standard_deviation": "sample (n-1)",
+  "models": [
+    {
+      "model": "efficientnet_b0",
+      "model_label": "EfficientNet-B0",
+      "seeds": "42,123,2025",
+      "accuracy_seed42": 0.9763888888888888,
+      "macro_f1_seed42": 0.976391663063656,
+      "best_round_seed42": 20,
+      "accuracy_seed123": 0.9666666666666667,
+      "macro_f1_seed123": 0.9666966621585964,
+      "best_round_seed123": 6,
+      "accuracy_seed2025": 0.9743055555555555,
+      "macro_f1_seed2025": 0.9743315295467063,
+      "best_round_seed2025": 20,
+      "mean_accuracy": 0.9724537037037037,
+      "sample_sd_accuracy": 0.005118829719327713,
+      "mean_macro_f1": 0.9724732849229861,
+      "sample_sd_macro_f1": 0.0051076477412273676,
+      "mean_best_round": 15.333333333333334,
+      "best_round_min": 6,
+      "best_round_max": 20,
+      "state_mib": 15.467781066894531,
+      "total_communication_mib": 2474.844970703125
+    },
+    {
+      "model": "resnet50",
+      "model_label": "ResNet50",
+      "seeds": "42,123,2025",
+      "accuracy_seed42": 0.9722222222222222,
+      "macro_f1_seed42": 0.9722695864510998,
+      "best_round_seed42": 15,
+      "accuracy_seed123": 0.96875,
+      "macro_f1_seed123": 0.9688231271366152,
+      "best_round_seed123": 13,
+      "accuracy_seed2025": 0.9743055555555555,
+      "macro_f1_seed2025": 0.9743565184186279,
+      "best_round_seed2025": 18,
+      "mean_accuracy": 0.9717592592592593,
+      "sample_sd_accuracy": 0.002806563808560671,
+      "mean_macro_f1": 0.9718164106687809,
+      "sample_sd_macro_f1": 0.0027943927761185853,
+      "mean_best_round": 15.333333333333334,
+      "best_round_min": 13,
+      "best_round_max": 18,
+      "state_mib": 89.91033172607422,
+      "total_communication_mib": 14385.653076171877
+    }
+  ]
+}

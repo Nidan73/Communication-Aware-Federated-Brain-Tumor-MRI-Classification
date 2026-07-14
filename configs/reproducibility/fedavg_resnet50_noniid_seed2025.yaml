@@ -1,0 +1,51 @@
+output_dir: reproducibility/results/fedavg_resnet50_noniid_seed2025
+
+manifests:
+  train: cluster_split_outputs/train_manifest.csv
+  val: cluster_split_outputs/val_manifest.csv
+  test: cluster_split_outputs/test_manifest.csv
+
+classes: [glioma, meningioma, notumor, pituitary]
+
+reproducibility:
+  strict_multiseed: true
+
+training:
+  seed: 2025
+  image_size: 224
+  batch_size: 32
+  num_workers: 2
+  optimizer: AdamW
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  selection_metric: validation_macro_f1
+
+federated:
+  clients: 4
+  rounds: 20
+  local_epochs: 3
+  participation_fraction: 1.0
+  aggregation: weighted_fedavg_by_client_sample_count
+
+split:
+  partition_file: reproducibility/client_partitions/noniid_seed2025.csv
+  partition_seed: 2025
+  noniid_dominant_fraction: 0.70
+
+communication:
+  mode: full_state_dict_upload_plus_download_per_round
+  unit: MiB
+
+experiments:
+  - run_id: fedavg_resnet50_noniid_seed2025
+    algorithm: fedavg
+    model_name: resnet50
+    pretrained: imagenet
+    centralized_checkpoint_initialization: false
+    trainable_layers: all
+    partition: noniid
+    seed: 2025
+    model_initialization_seed: 2025
+    dataloader_seed: 2025
+    learning_rate: 0.0003
+
